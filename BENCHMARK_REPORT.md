@@ -69,5 +69,5 @@ Hai run đều đạt error rate dưới SLO 2% và p95 dưới 500 ms, nhưng t
 1. Average latency không phản ánh tail latency.
 2. Eval chất lượng cần chạy cùng load test.
 3. v2 tốn token hơn nhưng cost trên mỗi câu đúng thấp hơn nhiều.
-4. Production observability stack đã được kiểm chứng local; chưa deploy cloud/public URL vì workspace không có credentials hoặc tài khoản cloud được cấp.
+4. Production observability stack đã được kiểm chứng local; public deployment Render đã xác minh `/health` và `/ready` đều trả HTTP 200 tại https://day14-agent-api.onrender.com.
 

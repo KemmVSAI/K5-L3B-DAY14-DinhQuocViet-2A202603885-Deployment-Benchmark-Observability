@@ -2,7 +2,7 @@
 
 ## Trạng thái
 
-Agent Part 6 đã chạy local bằng Docker Compose nhưng chưa deploy public lên Railway/Render.
+Agent Part 6 đã deploy public trên Render và đã xác minh endpoint từ môi trường ngoài local.
 
 ## Local test
 
@@ -23,5 +23,9 @@ Expected status: /health 200, /ready 200, /ask có key 200, không có key 401.
 
 ## Public URL
 
-Chưa có. Cần deploy Railway hoặc Render, tạo Redis và cập nhật URL thật trước khi nộp.
+- Base URL: https://day14-agent-api.onrender.com
+- Health: https://day14-agent-api.onrender.com/health → HTTP 200, `{"status":"ok"}`
+- Readiness: https://day14-agent-api.onrender.com/ready → HTTP 200, `{"status":"ready"}`
+
+Render cần được cấu hình các biến `AGENT_API_KEY`, `REDIS_URL`, `RATE_LIMIT_PER_MINUTE`, `DAILY_BUDGET_USD` và `ENVIRONMENT` trong dashboard; không đưa secret vào Git.
 

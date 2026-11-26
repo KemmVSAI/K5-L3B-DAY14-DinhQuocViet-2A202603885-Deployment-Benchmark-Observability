@@ -21,7 +21,11 @@ Production cần environment config, bind 0.0.0.0, health/readiness, JSON logs, 
 
 ## Part 3 — Cloud Deployment
 
-Chưa có URL public. Railway config đã chuẩn bị tại 06-lab-complete/railway.toml, dùng Dockerfile và healthcheck /health.
+Đã deploy Render: https://day14-agent-api.onrender.com
+
+- `/health` → HTTP 200, `{"status":"ok"}`
+- `/ready` → HTTP 200, `{"status":"ready"}`
+- Railway config vẫn được giữ tại `06-lab-complete/railway.toml` làm phương án triển khai thay thế.
 
 Cloud Run pipeline: test, build image, push registry, deploy Cloud Run. service.yaml mô tả autoscaling, resources, secrets và health probes.
 
@@ -59,7 +63,8 @@ Docker checker chạy đầy đủ trong WSL2 đạt **12/12 tiêu chí, 41/41 c
 - Production stack local đã chạy bằng Docker Compose với agent/nginx/Prometheus/Grafana/Jaeger/Locust.
 - CSV scale 1/3 đã lưu trong `benchmark-results/` và `06-lab-complete/benchmark-observability/production/benchmark-results/`.
 - Prometheus target agent `up`, Grafana health `ok`, alert cost firing, log agent có `trace_id`/`span_id`.
-- Chưa có public URL cloud và screenshots UI vì chưa có credentials cloud và chưa tự động hóa chụp UI trong workspace.
+- Public URL Render đã hoạt động và được xác minh.
+- Screenshots UI Grafana/Jaeger/Alerts vẫn chưa có trong workspace.
 
 ## AI log
 
